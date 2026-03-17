@@ -3,90 +3,134 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chethna | AI & Data Science Portfolio</title>
+<title>Chethna | AI Portfolio</title>
 
 <style>
 
 body{
-font-family: Arial, sans-serif;
 margin:0;
-background:#f5f7fb;
-color:#333;
-}
-
-header{
-background:#1f2937;
-color:white;
-padding:40px 20px;
-text-align:center;
-}
-
-header h1{
-margin:0;
-font-size:32px;
-}
-
-header p{
-font-size:18px;
-opacity:0.9;
+font-family:Segoe UI,Arial;
+background:#0f172a;
+color:#e2e8f0;
+scroll-behavior:smooth;
 }
 
 nav{
-background:#111827;
-text-align:center;
-padding:10px;
+display:flex;
+justify-content:center;
+gap:40px;
+padding:20px;
+background:#020617;
+position:sticky;
+top:0;
+z-index:100;
 }
 
 nav a{
-color:white;
-margin:0 15px;
+color:#e2e8f0;
 text-decoration:none;
-font-weight:bold;
+font-weight:500;
+}
+
+header{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:linear-gradient(120deg,#020617,#1e293b,#020617);
+background-size:400% 400%;
+animation:bgmove 15s infinite;
+}
+
+@keyframes bgmove{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+header h1{
+font-size:52px;
+margin:0;
+}
+
+header p{
+max-width:700px;
+font-size:20px;
+opacity:.9;
+}
+
+.btn{
+background:#38bdf8;
+color:black;
+padding:12px 22px;
+margin:10px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
 }
 
 section{
-max-width:900px;
+max-width:1000px;
 margin:auto;
-padding:40px 20px;
+padding:80px 20px;
 }
 
 h2{
-color:#111827;
+font-size:34px;
+margin-bottom:30px;
+}
+
+.card{
+background:#1e293b;
+padding:30px;
+margin-bottom:25px;
+border-radius:10px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.skill{
 margin-bottom:15px;
 }
 
-.skills span{
-display:inline-block;
-background:#e5e7eb;
-padding:8px 12px;
-margin:5px;
-border-radius:5px;
-font-size:14px;
+.skill-bar{
+height:8px;
+background:#334155;
+border-radius:4px;
+overflow:hidden;
 }
 
-.project{
-background:white;
-padding:20px;
-margin-bottom:20px;
-border-radius:8px;
-box-shadow:0 2px 6px rgba(0,0,0,0.1);
+.skill-fill{
+height:8px;
+background:#38bdf8;
 }
 
 footer{
-background:#1f2937;
-color:white;
 text-align:center;
-padding:20px;
-margin-top:40px;
+padding:30px;
+background:#020617;
 }
 
-a.button{
-display:inline-block;
-background:#2563eb;
-color:white;
-padding:10px 16px;
-border-radius:6px;
-text-decoration:none;
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:all .8s ease;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+video{
+width:100%;
+border-radius:8px;
 margin-top:10px;
 }
 
@@ -95,123 +139,230 @@ margin-top:10px;
 
 <body>
 
-<header>
-<h1>S Chethna</h1>
-<p>AI & Data Science Student | Generative AI Enthusiast</p>
-<p>Bengaluru, India</p>
-</header>
-
 <nav>
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
 <a href="#projects">Projects</a>
 <a href="#experience">Experience</a>
+<a href="#education">Education</a>
 <a href="#contact">Contact</a>
 </nav>
 
-<section id="about">
-<h2>About Me</h2>
+<header>
+
+<h1>Chethna S</h1>
+
 <p>
-I am a Data Science student passionate about Artificial Intelligence and Generative AI.
-Currently gaining hands-on experience as a Generative AI Intern where I am learning
-modern AI development workflows and building AI-based applications.
+Generative AI Developer | Data Science Student | AI Enthusiast
 </p>
+
+<p>
+Passionate about building intelligent AI systems using machine learning,
+computer vision and data analytics to solve real world problems.
+</p>
+
+<a class="btn" href="#projects">View Projects</a>
+<a class="btn" href="resume.pdf">Download Resume</a>
+
+</header>
+
+<section id="about" class="fade">
+
+<h2>About Me</h2>
+
+<p>
+I am a Computer Science (Data Science) student from Bengaluru with strong
+interest in Artificial Intelligence and Generative AI technologies.
+</p>
+
+<p>
+My work focuses on developing machine learning models, computer vision
+applications and data-driven systems that provide real-world solutions.
+</p>
+
+<p>
+Currently I am gaining industry exposure as a Generative AI Intern at CampusPe
+where I am learning AI product development and modern AI engineering workflows.
+</p>
+
 </section>
 
-<section id="skills">
+<section id="skills" class="fade">
+
 <h2>Technical Skills</h2>
 
-<div class="skills">
-<span>Python</span>
-<span>SQL</span>
-<span>Pandas</span>
-<span>NumPy</span>
-<span>Scikit-learn</span>
-<span>TensorFlow</span>
-<span>OpenCV</span>
-<span>MediaPipe</span>
-<span>Flask</span>
-<span>Power BI</span>
-<span>Tableau</span>
-<span>Git</span>
-<span>MySQL</span>
-<span>MongoDB</span>
+<div class="skill">
+Python
+<div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+</div>
+
+<div class="skill">
+Machine Learning
+<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+</div>
+
+<div class="skill">
+Data Analysis
+<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+</div>
+
+<div class="skill">
+Computer Vision
+<div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+</div>
+
+<div class="skill">
+SQL
+<div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
 </div>
 
 </section>
 
-<section id="projects">
+<section id="projects" class="fade">
+
 <h2>Projects</h2>
 
-<div class="project">
-<h3>AI Sign Language Interpreter</h3>
+<div class="card">
+
+<h3>AI-Enhanced Real-Time Sign Language Interpreter</h3>
+
 <p>
-Real-time system that detects sign language gestures using computer vision
-and converts them into text and speech.
+A computer vision based AI system that interprets sign language gestures
+into text and speech in real time.
 </p>
-<p><b>Tech:</b> Python, OpenCV, MediaPipe, SVM, NLTK</p>
-<a class="button" href="https://github.com/Chethana-git">View Project</a>
+
+<p>
+The system uses MediaPipe to detect hand landmarks from live video.
+An SVM model trained using Scikit-learn predicts gesture classes with
+low latency.
+</p>
+
+<p>
+An NLP module processes recognized gestures into meaningful sentences
+and generates natural language output.
+</p>
+
+<p><b>Technologies:</b> Python, OpenCV, MediaPipe, Scikit-learn, NLTK</p>
+
 </div>
 
-<div class="project">
-<h3>Expense Tracker Web App</h3>
+<div class="card">
+
+<h3>Expense Tracker Web Application</h3>
+
 <p>
-Web application that allows users to track and visualize personal expenses
-with categorized dashboards.
+A web platform that enables users to track and manage daily expenses
+while visualizing spending behaviour through dashboards.
 </p>
-<p><b>Tech:</b> Python, Flask, MySQL</p>
+
+<p>
+The system provides secure CRUD functionality and organizes financial
+records in a structured database.
+</p>
+
+<p><b>Technologies:</b> Python, Flask, MySQL</p>
+
 </div>
 
-<div class="project">
-<h3>Payroll Management System</h3>
+<div class="card">
+
+<h3>Employee Payroll Management System</h3>
+
 <p>
-Automated payroll system for managing employee records and salary calculations.
+Automated payroll processing system that manages employee salary
+calculations and maintains structured payroll records.
 </p>
-<p><b>Tech:</b> Python, SQL</p>
+
+<p><b>Technologies:</b> Python, SQL</p>
+
 </div>
 
-<div class="project">
-<h3>E-commerce Data Analysis</h3>
+<div class="card">
+
+<h3>E-commerce Sales Data Analysis</h3>
+
 <p>
-Exploratory data analysis on 50,000+ retail records to discover sales patterns
-and profit trends.
+Performed exploratory data analysis on 50,000+ global retail transactions
+to identify profit trends and product performance.
 </p>
-<p><b>Tech:</b> Python, Pandas, Matplotlib</p>
+
+<p><b>Technologies:</b> Python, Pandas, Matplotlib, Seaborn</p>
+
 </div>
 
 </section>
 
-<section id="experience">
+<section id="experience" class="fade">
+
 <h2>Experience</h2>
 
+<div class="card">
+
 <h3>Generative AI Intern</h3>
+
 <p>
-Learning Generative AI development including prompt engineering,
-AI chatbot concepts, and LLM-based applications while building
-real-world AI projects.
+CampusPe | Bengaluru | Feb 2026 – Present
 </p>
+
+<p>
+Currently undergoing hands-on training in Generative AI development,
+including prompt engineering, AI chatbot concepts and AI product
+development workflows.
+</p>
+
+</div>
 
 </section>
 
-<section id="contact">
+<section id="education" class="fade">
+
+<h2>Education</h2>
+
+<div class="card">
+
+<h3>B.E Computer Science Engineering (Data Science)</h3>
+
+<p>SJB Institute of Technology, Bengaluru</p>
+
+<p>2022 – 2026</p>
+
+</div>
+
+</section>
+
+<section id="contact" class="fade">
+
 <h2>Contact</h2>
 
 <p>Email: schethana.sc@gmail.com</p>
-<p>
-LinkedIn: 
-<a href="https://www.linkedin.com/in/s-chethnaa">linkedin.com/in/s-chethnaa</a>
-</p>
 
-<p>
-GitHub: 
-<a href="https://github.com/Chethana-git">github.com/Chethana-git</a>
-</p>
+<p>LinkedIn: linkedin.com/in/s-chethnaa</p>
+
+<p>Location: Bengaluru, India</p>
 
 </section>
 
 <footer>
-<p>© 2026 Chethna | AI & Data Science Portfolio</p>
+
+<p>© 2026 Chethna | AI Portfolio</p>
+
 </footer>
+
+<script>
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+document.querySelectorAll(".fade").forEach(el=>{
+observer.observe(el);
+});
+
+</script>
 
 </body>
 </html>
